@@ -16,7 +16,7 @@ function About() {
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }} >
           <Typography variant='h5' sx={{paddingBottom: 2}}>HTML, CSS, JavaScript, Bootstrap, React.js, React Hooks, Redux, MUİ teknolojilerini etkin bir şekilde kullanabiliyorum.
-            Github, Docker, Kubernetes hakkında bilgi sahibiyim. API'ler ile entegrasyonları sağlamak ve veri akışını yönetebilirim.
+            Github, Docker, Kubernetes hakkında bilgi sahibiyim. API'ler ile entegrasyonları sağlayabilir ve veri akışını yönetebilirim.
             Photoshop kullanabiliyorum.
             Agile/Scrum metodolojileri hakkında bilgi sahibiyim. Yazılım geliştirme süreçlerinin her aşamasında etkin bir rol oynayarak, yaratıcı ve etkili çözümler sunmayı amaçlıyorum.
             Takım çalışmasına uyumlu, sorumluluk sahibi ve öğrenmeye açığım.</Typography>
