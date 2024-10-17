@@ -13,12 +13,19 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
-
+import { useTranslation } from 'react-i18next';
+import i18n from '../lang'; 
 
 const Navbar = () => {
     const theme = useTheme();
     const colorMode = useContext(ColorModeContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const { t } = useTranslation(); 
+
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng); 
+    };
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -56,9 +63,7 @@ const Navbar = () => {
                         src="/favicon.ico"
                         sx={{ width: 90, height: 90, margin:'10px', display: { xs: 'none', md: 'flex', lg:'flex', xl:'flex' } }}
                     />
-                       
                     </Typography>
-
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -86,29 +91,20 @@ const Navbar = () => {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
-
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}><Link to={`/`}>Home</Link></Typography>
+                                <Typography sx={{ textAlign: 'center' }}><Link to={`/`}>{t('Home')}</Link></Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}> <Link to={`/about`}>About</Link></Typography>
+                                <Typography sx={{ textAlign: 'center' }}> <Link to={`/about`}>{t('About')}</Link></Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}> <Link to={`/project`}>Project</Link></Typography>
+                                <Typography sx={{ textAlign: 'center' }}> <Link to={`/project`}>{t('Projects')}</Link></Typography>
                             </MenuItem>
-
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography sx={{ textAlign: 'center' }}> <Link to={`/resume`}>{t('Resume')}</Link></Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
-                   {/* // <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-
-                  
-                    {/* <img
-                            component="img"
-                            height="auto"
-                            src='./favicon.ico'
-                            alt='logo' width={'30px'}
-                            sx={{ borderRadius: '10px', display: { xs: 'flex', md: 'none', lg:'none', xl:'none' } }}
-                        /> */}
                     <Typography
                         variant="h5"
                         noWrap
@@ -132,26 +128,30 @@ const Navbar = () => {
                     />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                            <Link to={`/`}>Home</Link>
+                            <Link to={`/`}>{t('Home')}</Link>
                         </Button>
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                            <Link to={`/about`}>About</Link>
+                            <Link to={`/about`}>{t('About')}</Link>
                         </Button>
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                            <Link to={`/project`}>Project</Link>
+                            <Link to={`/project`}>{t('Project')}</Link>
                         </Button>
-
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            <Link to={`/resume`}>{t('Resume')}</Link>
+                        </Button>
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
                         <IconButton onClick={handleClick}>
@@ -161,6 +161,13 @@ const Navbar = () => {
                             ) : (
                                 <DarkModeOutlinedIcon />
                             )}
+                        </IconButton>
+                    </Box>
+                    <Box display="flex" justifyContent="flex-end" p={2}>
+                        {/* Bayrak ikonları */}
+                        <IconButton onClick={() => changeLanguage('tr')}>TR
+                        </IconButton>
+                        <IconButton onClick={() => changeLanguage('en')}>EN
                         </IconButton>
                     </Box>
                 </Toolbar>

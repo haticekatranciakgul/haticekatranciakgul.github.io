@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
-
+import { useTranslation } from 'react-i18next'; 
 
 function HomeDetail() {
+    const { t } = useTranslation(); 
+
     return (
-        <Box sx={{ flexGrow: 1, paddingTop: '20%' }}>
+        <Box sx={{ flexGrow: 1, paddingTop: '10%' }}>
             <Grid container spacing={2}>
                 <Grid size={{ xs: 12, md: 4 }}
                 sx={{
@@ -28,7 +30,7 @@ function HomeDetail() {
                 </Grid>
                 <Grid size={{ xs: 12, md: 8 }}>
                     <Typography sx={{ fontSize: '40px' }}>HATİCE AKGUL KATRANCI</Typography>
-                    <Typography sx={{ fontSize: '35px' }}>FRONT-END DEVELOPER</Typography>
+                    <Typography sx={{ fontSize: '35px' }}>{t('FRONT-END DEVELOPER')}</Typography>
                     
 
                     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
