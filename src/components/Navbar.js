@@ -21,7 +21,8 @@ const Navbar = () => {
     const colorMode = useContext(ColorModeContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const { t } = useTranslation(); 
-
+    const imageName = 'logo.png';
+    const logoPath = `${process.env.PUBLIC_URL}/${imageName}`;
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng); 
@@ -60,7 +61,7 @@ const Navbar = () => {
                     >
                          <Avatar
                         alt="profilepic"
-                        src="/favicon.ico"
+                        src={logoPath}
                         sx={{ width: 90, height: 90, margin:'10px', display: { xs: 'none', md: 'flex', lg:'flex', xl:'flex' } }}
                     />
                     </Typography>
@@ -123,8 +124,8 @@ const Navbar = () => {
                     >
                           <Avatar
                         alt="profilepic"
-                        src="/favicon.ico"
-                        sx={{ width: 100, height: 100, margin:'15px', display: { xs: 'flex', md: 'none', lg:'none', xl:'none' } }}
+                        src={logoPath}
+                        sx={{ width: 70, height: 70, margin:'10px', display: { xs: 'flex', md: 'none', lg:'none', xl:'none' } }}
                     />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -164,10 +165,9 @@ const Navbar = () => {
                         </IconButton>
                     </Box>
                     <Box display="flex" justifyContent="flex-end" p={2}>
-                        {/* Bayrak ikonları */}
-                        <IconButton onClick={() => changeLanguage('tr')}>TR
+                        <IconButton onClick={() => changeLanguage('tr')} sx={{ fontSize:'13px'}} >TR
                         </IconButton>
-                        <IconButton onClick={() => changeLanguage('en')}>EN
+                        <IconButton onClick={() => changeLanguage('en')} sx={{ fontSize:'13px'}}>EN
                         </IconButton>
                     </Box>
                 </Toolbar>

@@ -16,7 +16,7 @@ function About() {
     <Box sx={{ flexGrow: 1, paddingTop: '1%' }}>
       <Grid container spacing={2} sx={{ textAlign: 'start' }}>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>{t('Summary')}</Typography>
+          <Typography variant='h5'>{t('Summary')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }} >
           <Typography variant='h5' sx={{paddingBottom: 2}}>{t('I can effectively use HTML, CSS, JavaScript, Bootstrap, React.js, React Hooks, Redux, and MUI technologies.I have knowledge of GitHub, Docker, and Kubernetes. I can integrate APIs and manage data.I am proficient in Photoshop.I have knowledge of Agile and Scrum methodologies. My aim is to provide creative and effective solutions by actively participating in every stage of software development.I am team-oriented, responsible, and open to growth.')}
@@ -24,10 +24,10 @@ function About() {
           <Divider />
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>{t('Skill')}</Typography>
+          <Typography variant='h5'>{t('Skill')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h4'>
+          <Typography variant='h6'>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, paddingBottom: 2 }}>
               <FontAwesomeIcon icon={faHtml5} size="2xl" />
               <FontAwesomeIcon icon={faReact} size="2xl" />
@@ -47,23 +47,21 @@ function About() {
           <Divider/>
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>{t('Experience')}</Typography>
+          <Typography variant='h5'>{t('Experience')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h4'>
+          <Typography variant='h6'>
             <Experience></Experience>
             <Divider/>
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 4, md: 4 }}>
-          <Typography variant='h4'>{t('Education')}</Typography>
+          <Typography variant='h5'>{t('Education')}</Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 8, md: 8 }}>
-          <Typography variant='h5'>{t('Istanbul Yeni Yuzyil Universty')}İstanbul Yeni Yüzyıl Üniversitesi</Typography>
+          <Typography variant='h6'>{t('Istanbul Yeni Yuzyil Universty')}İstanbul Yeni Yüzyıl Üniversitesi</Typography>
         </Grid>
       </Grid>
-
-
     </Box>
   );
 }

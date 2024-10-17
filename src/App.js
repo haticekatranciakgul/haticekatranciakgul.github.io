@@ -9,7 +9,7 @@ import Resume from './pages/Resume';
 function App() {
   return (
     <div className="App">   
-      <BrowserRouter>
+      <BrowserRouter basename='/haticekatranciakgul.github.io'>
         <Routes>
           <Route path="/" element={<Home />}>
           <Route path="/" element={<HomeDetail />} />
